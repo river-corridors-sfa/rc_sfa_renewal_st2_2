@@ -28,7 +28,10 @@ ggplot() +
 
 ## Since we're focused on CONUS, remove sites outside conus and replot
 sp_sites_conus <- sp_sites_all %>% 
-  st_crop(., conus_map)
+  st_crop(., conus_map) %>% 
+  mutate(source = case_when(grepl("neon", data_source) ~ "NEON", 
+                            grepl("nature", data_source) ~ "USGS", 
+                            TRUE ~ "StreamPULSE"))
   
 ggplot() + 
   geom_sf(data = conus_map) + 

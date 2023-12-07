@@ -24,34 +24,3 @@ mtbs_conus <- mtbs_raw %>%
   st_crop(., conus_map)
 toc()
 
-
-
-
-
-## Moving forward, it might be nice to compartmentalize things by state then
-## future_map() across so it gets somewhat more managable working with big data.
-
-mtbs_conus_clean <- mtbs_conus %>% 
-  clean_names() %>% 
-  select()
-
-
-x <- mtbs_conus %>% 
-  slice(1:100)
-
-
-
-
-ggplot() + 
-  geom_sf(data = conus_map) + 
-  geom_sf(data = x)
-
-tic("intersect sites and burn-scars")
-## nrow(x) = 300 - 29s (0 overlaps)
-## nrow(x) = 500 - 39s (0 overlaps)
-## nrow(x = 1000) - 66s (0 overlaps)
-spatial_overlaps <- st_intersection(sp_sites_conus, x)
-toc()
-
-
-
