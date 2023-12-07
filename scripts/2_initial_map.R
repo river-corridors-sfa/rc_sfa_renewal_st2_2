@@ -21,25 +21,25 @@ toc()
 tic("make plot") #200s
 ggplot() + 
   geom_sf(data = conus_map, fill = "gray", alpha = 0.05) + 
-  geom_sf(data = sp_sites_conus, aes(pch = source, color = source), alpha = 0.8) + 
+  geom_sf(data = sp_sites_conus, aes(pch = source, color = source), alpha = 0.9) + 
   geom_sf(data = mtbs_conus,
           #%>% slice(1:100),  # use this to tweak plot for faster rendering
-          color = "orange", fill = "orange", alpha = 0.6) + 
+          color = NA, fill = "red", alpha = 0.2) + 
   labs(pch = "", color = "", title = "StreamPULSE sites and wildfires") + 
   coord_sf(crs = coord_sf_crs)
 ggsave("figures/1_conus_map.png", width = 8, height = 4)
 toc()
 
 
-tic("make plot") #200s
-ggplot() + 
-  geom_sf(data = conus_map, fill = "gray10", alpha = 0.95) + 
-  geom_sf(data = sp_sites_conus, aes(pch = source, color = source), alpha = 0.8) + 
-  geom_sf(data = mtbs_conus,
-          #%>% slice(1:100),  # use this to tweak plot for faster rendering
-          color = "orange", fill = "orange", alpha = 0.6) + 
-  labs(pch = "", color = "", title = "StreamPULSE sites and wildfires") + 
-  coord_sf(crs = coord_sf_crs)
-ggsave("figures/1_conus_map_dark.png", width = 8, height = 4)
-toc()
+# tic("make plot") #200s
+# ggplot() + 
+#   geom_sf(data = conus_map, fill = "gray10", alpha = 0.95) + 
+#   geom_sf(data = sp_sites_conus, aes(pch = source, color = source), alpha = 0.8) + 
+#   geom_sf(data = mtbs_conus,
+#           #%>% slice(1:100),  # use this to tweak plot for faster rendering
+#           color = NA, fill = "orange", alpha = 0.6) + 
+#   labs(pch = "", color = "", title = "StreamPULSE sites and wildfires") + 
+#   coord_sf(crs = coord_sf_crs)
+# ggsave("figures/1_conus_map_dark.png", width = 8, height = 4)
+# toc()
 
