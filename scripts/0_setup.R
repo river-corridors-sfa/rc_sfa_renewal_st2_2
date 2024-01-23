@@ -5,6 +5,7 @@ require(pacman)
 p_load(tidyverse,
        janitor,
        future,
+       ggthemes,
        sf, 
        tictoc, # time stuff
        rnaturalearth, # US map baselayer
