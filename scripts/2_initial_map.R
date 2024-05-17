@@ -12,8 +12,8 @@
 source("scripts/0_setup.R")
 
 tic("prep") #104s
-source("scripts/1_streampulse_prep.R")
-source("scripts/1_mtbs_prep.R")
+#source("scripts/1_streampulse_prep.R")
+#source("scripts/1_mtbs_prep.R")
 toc()
 
 # 2. Make plot -----------------------------------------------------------------

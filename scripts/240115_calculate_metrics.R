@@ -165,10 +165,10 @@ st2_clean2 <- st2_characteristics2 %>%
 write_csv(st2_clean2, "data/240117_st2_characteristics_2.csv")
 
 
-
-p_load(devtools)
-
-devtools::install_github("jayverhoef/SSN")
+# 
+# p_load(devtools)
+# 
+# devtools::install_github("jayverhoef/SSN")
 
 
 
